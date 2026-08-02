@@ -115,7 +115,7 @@ h2 {
     justify-content: flex-end;
     gap: 12px;
     flex: 0 0 auto;
-    margin-left: auto;
+    margin-inline-start: auto;
 }
 
 .language-control {
@@ -254,7 +254,7 @@ label {
 
 .row2.preview-layout .leftcol {
     flex: 0 0 auto;
-    padding-right: 0;
+    padding-inline-end: 0;
 }
 
 .row2.upload-result-layout {
@@ -1222,7 +1222,7 @@ form {
   gap: 4px;
   margin: 0;
   color: #555;
-  text-align: left;
+  text-align: start;
 }
 .cropdim input {
     width: 100%;
@@ -1744,7 +1744,7 @@ form {
     margin: 0;
     padding: 0;
     border-bottom: 0;
-    text-align: left;
+    text-align: start;
   }
 
   .cropdim input {
@@ -1868,20 +1868,5 @@ html .cropper-crop {
 /* Needed to prevent the overlay color from affecting the preview */
 html .cropper-face {
   background-color: unset;
-}
-
-/* RTL support */
-[dir="rtl"] .app-menu-actions {
-    margin-left: 0;
-    margin-right: auto;
-}
-
-[dir="rtl"] .cropdim label {
-    text-align: right;
-}
-
-[dir="rtl"] .row2.preview-layout .leftcol {
-    padding-right: 10px;
-    padding-left: 0;
 }
 
