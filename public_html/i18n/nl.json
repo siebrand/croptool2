@@ -11,7 +11,7 @@
 	"croptoo2l-footer-tutorial": "Handleiding",
 	"croptoo2l-footer-report-issues": "Probleem melden",
 	"croptoo2l-loginform-header": "Aanmelden vereist",
-	"croptoo2l-loginform-blurb": "CropTool2 is een hulpmiddel om afbeeldingen (JPG, PNG, GIF, SVG, WebP, PDF, TIFF of DjVu-bestanden) op Wikimedia-sites uit te snijden. <a href=\"{{url}}\" target=\"_blank\" rel=\"noopener\">Lees meer</a>.",
+	"croptoo2l-loginform-blurb": "CropTool2 is een hulpmiddel om afbeeldingen (JPG, PNG, GIF, SVG, WebP, pdf, TIFF of DjVu-bestanden) op Wikimedia-sites uit te snijden. <a href=\"{{url}}\" target=\"_blank\" rel=\"noopener\">Lees meer</a>.",
 	"croptoo2l-loginform-help": "Om CropTool2 te gebruiken moet u het verbinden met uw Wikimedia-account. Dit proces is veilig en uw wachtwoord wordt niet aan CropTool2 gegeven.",
 	"croptoo2l-loginform-submit-button": "Verbinden",
 	"croptoo2l-titleform-header": "Wat wilt u uitsnijden?",

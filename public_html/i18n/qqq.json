@@ -1,6 +1,8 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Nike"
+		]
 	},
 	"croptoo2l-initial-loading": "Shown while the application checks whether the user is logged in.",
 	"croptoo2l-logged-in": "Short account status shown before the current Wikimedia username in the page header.",
@@ -21,7 +23,7 @@
 	"croptoo2l-file-waiting-for-license-review": "Error shown when the selected file is waiting for license review and should not be cropped yet.",
 	"croptoo2l-fetching-progress": "Shown while file data and metadata are being loaded before the image appears.",
 	"croptoo2l-view-at-site": "Link text for opening the file page on the source Wikimedia site. Parameters:\n* {{site}} - Wikimedia site hostname.",
-	"croptoo2l-original-dimensions": "Shows the original image dimensions. Parameters:\n* {{width}} - width in pixels\n* {{height}} - height in pixels.",
+	"croptoo2l-original-dimensions": "Shows the original image dimensions. Parameters:\n* <nowiki>{{width}}</nowiki> - width in pixels\n* <nowiki>{{height}}</nowiki> - height in pixels.",
 	"croptoo2l-thumb-dimensions": "Shows thumbnail dimensions. Parameters:\n* {{width}} - width in pixels\n* {{height}} - height in pixels.",
 	"croptoo2l-cropped-dimensions": "Shows the resulting cropped image dimensions. Parameters:\n* {{width}} - width in pixels\n* {{height}} - height in pixels.",
 	"croptoo2l-cropform-border-locator": "Button text for automatically finding a border around the image.",
