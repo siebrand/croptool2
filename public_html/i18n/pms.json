@@ -79,5 +79,6 @@
 	"croptoo2l-previewform-lossless-explanation": "Ël meud sensa pèrdite a peul anclude chèich pontin suplementar.",
 	"croptoo2l-previewform-precise-crop-performed": "N'artaj precis a l'é stàit fàit.",
 	"croptoo2l-previewform-overwrite-policy": "Ch'a consulta <a href=\"{{url}}\" target=\"_blank\" rel=\"noopener\">COM:CROP</a> prima dë dzorascrive.",
-	"croptoo2l-previewform-overwrite-policy-help": "Ch'a dzorascriva mach për dj'ameliorassion cite. Ch'a ch'a caria dle modìfiche sostansiaj o contestà tanme archivi neuv."
+	"croptoo2l-previewform-overwrite-policy-help": "Ch'a dzorascriva mach për dj'ameliorassion cite. Ch'a ch'a caria dle modìfiche sostansiaj o contestà tanme archivi neuv.",
+	"croptoo2l-previewform-donotcrop-template": "L'opsion dë dzorascritura a l'é disabilità përché l'archivi a l'é stàit marcà con lë stamp 'artajé nen' o 'la bordura a l'é vorsùa'. Ch'a vada anans a carié n'archivi neuv mach s'a l'é sigur ch'a-i é damanca ëd na version artajà."
 }
