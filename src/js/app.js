@@ -57,7 +57,7 @@ service('LoginService', ['$http', '$rootScope', function($http, $rootScope) {
 
     this.checkLogin = function(res) {
         var data = res.data;
-        if (false && location.search.indexOf('loggedout=1') !== -1) {
+        if (location.search.indexOf('loggedout=1') !== -1) {
             data.user = undefined;
         }
         if (data.user) {
