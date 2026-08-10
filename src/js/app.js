@@ -13,21 +13,37 @@ config(['$translateProvider', function($translateProvider) {
     $translateProvider.preferredLanguage('en');
 }]).
 
-directive('ctIcon', [function() {
+directive('ctIcon', ['$rootScope', function($rootScope) {
     return {
         restrict: 'A',
         link: function(scope, element, attrs) {
             attrs.$observe('ctIcon', renderIcon);
+            $rootScope.$on('$translateChangeSuccess', function() {
+                renderIcon(attrs.ctIcon);
+            });
 
             function renderIcon(name) {
-                var path = window.CropToolCodexIcons && window.CropToolCodexIcons[name];
+                var icons = window.CropToolCodexIcons || {};
+                var rtlName = document.dir === 'rtl' ? name + '-rtl' : null;
+                var path = icons[rtlName] || icons[name];
                 element.addClass('ct-icon');
+                element.removeClass('ct-icon-flip');
                 element.attr('aria-hidden', 'true');
                 if (!path) {
                     element.empty();
                     return;
                 }
-                element.html('<svg viewBox="0 0 20 20" focusable="false">' + path + '</svg>');
+                if (document.dir === 'rtl') {
+                    var flipRule = window.CropToolIconFlip && window.CropToolIconFlip[name];
+                    if (flipRule) {
+                        var baseLang = (document.documentElement.lang || 'en').toLowerCase().split(/[-_]/)[0];
+                        var exceptions = flipRule.exceptions || [];
+                        if (exceptions.indexOf(baseLang) === -1) {
+                            element.addClass('ct-icon-flip');
+                        }
+                    }
+                }
+                element.html('<svg viewBox="0 0 20 20" focusable="false"><g>' + path + '</g></svg>');
             }
         }
     };
@@ -323,7 +339,8 @@ controller('AppCtrl', ['$scope', '$http', '$timeout', '$q', '$window', '$httpPar
         pixelratio = [1,1],
         setSelectCalled = false,
         labelFallbackLanguages = ['en', 'mul', 'de', 'fr', 'nl', 'es'],
-        descriptionFallbackLanguages = ['en', 'de', 'fr', 'nl', 'es'];
+        descriptionFallbackLanguages = ['en', 'de', 'fr', 'nl', 'es'],
+        rtlLanguages = ['ar', 'arc', 'arz', 'azb', 'ckb', 'dv', 'fa', 'he', 'khw', 'ks', 'ku', 'mzn', 'ps', 'sd', 'ug', 'ur', 'yi'];
 
     $scope.availableLanguages = [
         { code: 'en', label: 'English' },
@@ -334,7 +351,7 @@ controller('AppCtrl', ['$scope', '$http', '$timeout', '$q', '$window', '$httpPar
         { code: 'zh', label: '中文' }
     ];
     var storedLanguage = LocalStorageService.get('croptool-language');
-    var urlLanguage = (getParameterByName('uselang') || getParameterByName('lang')).toLowerCase();
+    var urlLanguage = (getParameterByName('uselang') || getParameterByName('lang') || '').toLowerCase();
     $scope.currentLanguage = languageAvailable(urlLanguage) ? urlLanguage : storedLanguage || 'en';
     useInterfaceLanguage($scope.currentLanguage);
     $scope.changeLanguage = function(language) {
@@ -345,7 +362,11 @@ controller('AppCtrl', ['$scope', '$http', '$timeout', '$q', '$window', '$httpPar
     };
 
     function useInterfaceLanguage(language) {
+        var baseLanguage = (language || 'en').toLowerCase().split(/[-_]/)[0];
+
         $scope.currentLanguage = language;
+        $window.document.documentElement.lang = language || 'en';
+        $window.document.documentElement.dir = rtlLanguages.indexOf(baseLanguage) == -1 ? 'ltr' : 'rtl';
         $translate.use(language);
     }
 
